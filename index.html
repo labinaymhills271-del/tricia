@@ -1,0 +1,2283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f7a8c8">
+
+<title>Tricia Mae Gaspar | Student Portfolio</title>
+
+<!-- GOOGLE FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+    --pink: #e85d96;
+    --pink-light: #ffb6d5;
+    --pink-soft: #ffe3ef;
+    --rose: #c93f79;
+    --purple: #9d6bff;
+    --dark: #351827;
+    --text: #694452;
+    --muted: #98717f;
+    --white: #ffffff;
+    --cream: #fff8fb;
+
+    --shadow:
+        0 25px 70px rgba(190, 79, 125, .15);
+
+    --soft-shadow:
+        0 15px 45px rgba(190, 79, 125, .10);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #fff8fb;
+    color: var(--dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   BACKGROUND ART
+========================================================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    top: -180px;
+    left: -150px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 170, 205, .45),
+            transparent 68%
+        );
+
+    filter: blur(15px);
+    pointer-events: none;
+    z-index: -3;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 550px;
+    height: 550px;
+    right: -220px;
+    bottom: -180px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(193, 157, 255, .22),
+            transparent 68%
+        );
+
+    filter: blur(15px);
+    pointer-events: none;
+    z-index: -3;
+}
+
+
+/* =========================================================
+   FLOATING ART ELEMENTS
+========================================================= */
+
+.art-shape {
+    position: fixed;
+    pointer-events: none;
+    z-index: -1;
+    opacity: .55;
+}
+
+.shape-one {
+    width: 75px;
+    height: 75px;
+    border: 2px solid rgba(232,93,150,.18);
+    border-radius: 50%;
+    top: 22%;
+    left: 4%;
+    animation: floatOne 7s ease-in-out infinite;
+}
+
+.shape-two {
+    width: 30px;
+    height: 30px;
+    background: rgba(232,93,150,.15);
+    border-radius: 8px;
+    transform: rotate(25deg);
+    top: 55%;
+    right: 7%;
+    animation: floatTwo 5s ease-in-out infinite;
+}
+
+.shape-three {
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgba(157,107,255,.18);
+    transform: rotate(45deg);
+    bottom: 20%;
+    left: 7%;
+    animation: floatThree 8s ease-in-out infinite;
+}
+
+@keyframes floatOne {
+    0%,100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-25px) rotate(15deg);
+    }
+}
+
+@keyframes floatTwo {
+    0%,100% {
+        transform: translateY(0) rotate(25deg);
+    }
+    50% {
+        transform: translateY(-18px) rotate(50deg);
+    }
+}
+
+@keyframes floatThree {
+    0%,100% {
+        transform: translateY(0) rotate(45deg);
+    }
+    50% {
+        transform: translateY(20px) rotate(75deg);
+    }
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+    position: sticky;
+    top: 15px;
+    z-index: 1000;
+
+    width: min(1180px, calc(100% - 30px));
+    margin: 15px auto 0;
+
+    padding: 15px 22px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(255,255,255,.72);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(232,93,150,.15);
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 40px rgba(115,45,75,.08);
+}
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--dark);
+    letter-spacing: -.5px;
+}
+
+.logo span {
+    color: var(--pink);
+    font-style: italic;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav ul li a {
+    position: relative;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #744d5c;
+
+    transition: .3s ease;
+}
+
+nav ul li a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    border-radius: 10px;
+    background: var(--pink);
+
+    transition: .3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--pink);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: calc(100vh - 90px);
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 7% 100px;
+
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 480px;
+    height: 480px;
+
+    right: 8%;
+    top: 5%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,184,213,.38),
+            transparent 65%
+        );
+
+    filter: blur(10px);
+
+    z-index: -1;
+}
+
+.hero-content {
+    width: min(1180px, 100%);
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+
+    gap: 70px;
+    align-items: center;
+}
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 8px 15px;
+
+    border-radius: 50px;
+
+    background: rgba(255,255,255,.75);
+
+    border: 1px solid rgba(232,93,150,.18);
+
+    color: var(--pink);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    box-shadow: var(--soft-shadow);
+
+    animation: fadeUp .8s ease both;
+}
+
+.hero-label::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+    background: var(--pink);
+
+    box-shadow: 0 0 0 5px rgba(232,93,150,.12);
+}
+
+.hero-text h1 {
+    margin: 20px 0 10px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(55px, 7vw, 95px);
+
+    line-height: .95;
+
+    letter-spacing: -4px;
+
+    color: var(--dark);
+
+    animation: fadeUp .9s .1s ease both;
+}
+
+.hero-text h1 span {
+    display: inline-block;
+
+    background:
+        linear-gradient(
+            100deg,
+            #e85d96,
+            #ff9fc3,
+            #9d6bff
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    font-style: italic;
+}
+
+.hero-text h2 {
+    margin-top: 22px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    color: #9b5270;
+
+    animation: fadeUp .9s .2s ease both;
+}
+
+.hero-text p {
+    max-width: 620px;
+
+    margin-top: 20px;
+
+    color: var(--muted);
+
+    font-size: 16px;
+
+    animation: fadeUp .9s .3s ease both;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-top: 30px;
+
+    animation: fadeUp .9s .4s ease both;
+}
+
+.btn {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    min-height: 50px;
+
+    padding: 0 22px;
+
+    border-radius: 15px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+
+    overflow: hidden;
+}
+
+.btn-primary {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ed70a3,
+            #d94882
+        );
+
+    box-shadow:
+        0 12px 28px rgba(217,72,130,.25);
+}
+
+.btn-primary::before {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    top: -60px;
+    left: -100px;
+
+    background: rgba(255,255,255,.3);
+
+    transform: rotate(25deg);
+
+    transition: .5s;
+}
+
+.btn-primary:hover::before {
+    left: 130%;
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 18px 35px rgba(217,72,130,.32);
+}
+
+.btn-outline {
+    color: #7a5060;
+
+    background: rgba(255,255,255,.75);
+
+    border: 1px solid rgba(217,72,130,.2);
+}
+
+.btn-outline:hover {
+    transform: translateY(-4px);
+
+    background: #fff;
+
+    border-color: var(--pink);
+
+    color: var(--pink);
+
+    box-shadow: var(--soft-shadow);
+}
+
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.hero-visual {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+
+    animation: fadeIn 1s .3s ease both;
+}
+
+.profile-card {
+    width: min(390px, 100%);
+
+    position: relative;
+
+    padding: 30px;
+
+    text-align: center;
+
+    border-radius: 40px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.9),
+            rgba(255,231,241,.8)
+        );
+
+    border: 1px solid rgba(255,255,255,.8);
+
+    box-shadow:
+        0 30px 80px rgba(167,65,108,.16);
+
+    backdrop-filter: blur(20px);
+
+    transform: rotate(2deg);
+
+    transition: .5s ease;
+}
+
+.profile-card:hover {
+    transform:
+        rotate(0deg)
+        translateY(-8px);
+}
+
+.profile-card::before {
+    content: "✦";
+
+    position: absolute;
+
+    top: 20px;
+    right: 25px;
+
+    color: #e85d96;
+
+    font-size: 20px;
+
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+.profile-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    left: -45px;
+    bottom: -40px;
+
+    border-radius: 50%;
+
+    background: rgba(157,107,255,.13);
+
+    z-index: -1;
+}
+
+.profile-circle {
+    width: 235px;
+    height: 235px;
+
+    margin: 0 auto;
+
+    padding: 8px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffb4d1,
+            #e85d96,
+            #a875ff
+        );
+
+    box-shadow:
+        0 0 0 7px rgba(255,255,255,.65),
+        0 25px 50px rgba(217,79,138,.2);
+
+    overflow: hidden;
+}
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 50%;
+
+    background: #ffe5ef;
+}
+
+.profile-card h3 {
+    margin-top: 25px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 27px;
+
+    color: var(--dark);
+}
+
+.profile-card p {
+    margin-top: 3px;
+
+    font-size: 13px;
+
+    color: #9a6879;
+}
+
+.profile-tag {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 7px 13px;
+
+    border-radius: 50px;
+
+    background: #fff;
+
+    color: var(--pink);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    box-shadow: 0 7px 20px rgba(180,65,110,.1);
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+section {
+    padding: 105px 7%;
+}
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+.section-title span {
+    color: var(--pink);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+.section-title h2 {
+    margin-top: 8px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(38px, 5vw, 56px);
+
+    letter-spacing: -1.5px;
+
+    color: var(--dark);
+}
+
+.section-title h2 em {
+    color: var(--pink);
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   GLASS CARD
+========================================================= */
+
+.about,
+.info-box,
+.skill-card,
+.timeline-content,
+.achievement,
+.goal {
+    background:
+        rgba(255,255,255,.7);
+
+    border:
+        1px solid rgba(232,93,150,.12);
+
+    box-shadow:
+        var(--soft-shadow);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about {
+    max-width: 950px;
+
+    margin: auto;
+
+    padding: 45px;
+
+    border-radius: 30px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.about::before {
+    content: "“";
+
+    position: absolute;
+
+    top: -45px;
+    left: 25px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 160px;
+
+    color: rgba(232,93,150,.08);
+}
+
+.about p {
+    position: relative;
+
+    text-align: center;
+
+    color: var(--text);
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   INFORMATION
+========================================================= */
+
+.info-grid {
+    width: min(1100px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+.info-box {
+    padding: 23px;
+
+    border-radius: 20px;
+
+    transition: .35s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-6px) rotate(.5deg);
+
+    border-color:
+        rgba(232,93,150,.35);
+
+    box-shadow:
+        0 20px 45px rgba(190,87,128,.14);
+}
+
+.info-box strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--pink);
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+}
+
+.info-box span {
+    color: var(--text);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-grid {
+    width: min(1100px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.skill-card {
+    position: relative;
+
+    padding: 32px 22px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    transition: .35s ease;
+}
+
+.skill-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    right: -40px;
+    top: -40px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(232,93,150,.09);
+}
+
+.skill-card:hover {
+    transform:
+        translateY(-9px)
+        rotate(-1deg);
+
+    box-shadow:
+        0 25px 50px rgba(190,87,128,.15);
+}
+
+.skill-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe0ec,
+            #fff
+        );
+
+    font-size: 30px;
+
+    box-shadow:
+        0 10px 25px rgba(190,87,128,.1);
+}
+
+.skill-card h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+
+    color: var(--dark);
+
+    margin-bottom: 8px;
+}
+
+.skill-card p {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.timeline {
+    width: min(900px, 100%);
+
+    margin: auto;
+
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 19px;
+    top: 0;
+    bottom: 0;
+
+    width: 2px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #ffb1ce,
+            #e85d96,
+            #a875ff
+        );
+}
+
+.timeline-item {
+    position: relative;
+
+    padding-left: 65px;
+
+    margin-bottom: 35px;
+}
+
+.timeline-dot {
+    position: absolute;
+
+    left: 8px;
+    top: 12px;
+
+    width: 24px;
+    height: 24px;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    border: 6px solid var(--pink);
+
+    box-shadow:
+        0 0 0 6px rgba(232,93,150,.1);
+}
+
+.timeline-content {
+    padding: 30px;
+
+    border-radius: 25px;
+
+    transition: .35s ease;
+}
+
+.timeline-content:hover {
+    transform: translateX(7px);
+
+    box-shadow:
+        0 20px 50px rgba(190,87,128,.14);
+}
+
+.timeline-content h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+
+    color: var(--dark);
+
+    margin-bottom: 8px;
+}
+
+.timeline-content p,
+.timeline-content li {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+.timeline-content ul {
+    margin:
+        15px 0 0 20px;
+}
+
+
+/* =========================================================
+   ACHIEVEMENT
+========================================================= */
+
+.achievement {
+    width: min(900px, 100%);
+
+    margin: auto;
+
+    padding: 55px 40px;
+
+    text-align: center;
+
+    border-radius: 35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,220,234,.9),
+            rgba(255,255,255,.75)
+        );
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.achievement::before {
+    content: "";
+
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+
+    left: -100px;
+    top: -100px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(232,93,150,.12);
+}
+
+.achievement-icon {
+    font-size: 55px;
+
+    animation:
+        achievementFloat 3s ease-in-out infinite;
+}
+
+@keyframes achievementFloat {
+    0%,100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(3deg);
+    }
+}
+
+.achievement h3 {
+    margin: 15px 0;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 30px;
+
+    color: var(--dark);
+}
+
+.achievement p {
+    max-width: 680px;
+
+    margin: auto;
+
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   GOALS
+========================================================= */
+
+.goals {
+    width: min(1000px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.goal {
+    padding: 32px 25px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    transition: .35s ease;
+}
+
+.goal:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 25px 50px rgba(190,87,128,.14);
+}
+
+.goal h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+
+    color: var(--dark);
+
+    margin-bottom: 10px;
+}
+
+.goal p {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-card {
+    width: min(900px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.contact-item {
+    padding: 25px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,.72);
+
+    border: 1px solid rgba(232,93,150,.12);
+
+    border-radius: 22px;
+
+    box-shadow: var(--soft-shadow);
+}
+
+.contact-item strong {
+    display: block;
+
+    color: var(--pink);
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 5px;
+}
+
+.contact-item span {
+    color: var(--text);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    margin-top: 60px;
+
+    padding: 55px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3d1e2c,
+            #57283d
+        );
+
+    color: white;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+footer::before {
+    content: "✦  ♡  ✦";
+
+    position: absolute;
+
+    top: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: rgba(255,255,255,.15);
+
+    letter-spacing: 15px;
+}
+
+footer h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 27px;
+
+    color: #ffb4d1;
+
+    margin-bottom: 7px;
+}
+
+footer p {
+    color: #e8cbd6;
+
+    font-size: 13px;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes sparkle {
+    0%,100% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(20deg) scale(1.2);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        margin-top: 25px;
+    }
+
+    .skills-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .goals {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+}
+
+
+@media (max-width: 750px) {
+
+    nav {
+        top: 8px;
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        padding: 14px;
+    }
+
+    nav ul {
+        gap: 13px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    nav ul li a {
+        font-size: 11px;
+    }
+
+    .hero {
+        padding-top: 65px;
+    }
+
+    .hero-text h1 {
+        font-size: 62px;
+
+        letter-spacing: -3px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    section {
+        padding:
+            75px 5%;
+    }
+
+    .hero {
+        padding:
+            55px 5% 80px;
+    }
+
+    .hero-text h1 {
+        font-size: 54px;
+    }
+
+    .hero-text h2 {
+        font-size: 16px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+    }
+
+    .buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .profile-card {
+        padding: 25px;
+
+        border-radius: 30px;
+    }
+
+    .profile-circle {
+        width: 180px;
+        height: 180px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .goals {
+        grid-template-columns: 1fr;
+    }
+
+    .about {
+        padding: 30px 22px;
+    }
+
+    .timeline-item {
+        padding-left: 50px;
+    }
+
+    .timeline::before {
+        left: 14px;
+    }
+
+    .timeline-dot {
+        left: 3px;
+    }
+
+    .timeline-content {
+        padding: 24px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- =========================================================
+     FLOATING DECORATIONS
+========================================================= -->
+
+<div class="art-shape shape-one"></div>
+<div class="art-shape shape-two"></div>
+<div class="art-shape shape-three"></div>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav>
+
+    <div class="logo">
+        Tricia <span>Mae</span>
+    </div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#information">Information</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#goals">Goals</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-text">
+
+            <div class="hero-label">
+                Welcome to my portfolio
+            </div>
+
+            <h1>
+                Tricia Mae<br>
+                <span>Gaspar.</span>
+            </h1>
+
+            <h2>
+                Grade 8 Student • ATP Student
+            </h2>
+
+            <p>
+                I am a creative, hardworking, and responsible student
+                who enjoys learning new things. I am passionate about
+                cooking, designing, creativity, and communicating with
+                other people.
+            </p>
+
+
+            <!-- =================================================
+                 HERO BUTTONS
+            ================================================= -->
+
+            <div class="buttons">
+
+                <!-- CANVA RESUME BUTTON -->
+
+                <a
+                    href="https://canva.link/faeqd7d0ncgvopj"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary"
+                >
+                    ✦ View My Resume
+                </a>
+
+
+                <!-- CONTACT BUTTON -->
+
+                <a
+                    href="#contact"
+                    class="btn btn-outline"
+                >
+                    ♡ Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             PROFILE CARD
+        ================================================= -->
+
+        <div class="hero-visual">
+
+            <div class="profile-card">
+
+                <div class="profile-circle">
+
+                    <img
+                        src="tricia.jpg"
+                        alt="Tricia Mae Gaspar"
+                    >
+
+                </div>
+
+                <h3>
+                    Tricia Mae Gaspar
+                </h3>
+
+                <p>
+                    Academic Achiever
+                </p>
+
+                <p>
+                    Mapurao Integrated Learning School
+                </p>
+
+                <p>
+                    Grade 8 • ATP Student
+                </p>
+
+                <div class="profile-tag">
+                    ✦ Student Portfolio
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section id="about">
+
+    <div class="section-title reveal">
+
+        <span>Get to know me</span>
+
+        <h2>
+            About <em>Me</em>
+        </h2>
+
+    </div>
+
+
+    <div class="about reveal">
+
+        <p>
+            I am Tricia Mae Gaspar, a Grade 8 student and ATP student
+            at Mapurao Integrated Learning School. I am a creative,
+            hardworking, and responsible person who enjoys learning
+            new things and developing my skills. I love cooking,
+            designing, creating new ideas, and communicating with
+            others. I always try my best in school and aim to improve
+            myself every day.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PERSONAL INFORMATION
+========================================================= -->
+
+<section id="information">
+
+    <div class="section-title reveal">
+
+        <span>My details</span>
+
+        <h2>
+            Personal <em>Information</em>
+        </h2>
+
+    </div>
+
+
+    <div class="info-grid">
+
+        <div class="info-box reveal">
+            <strong>Full Name</strong>
+            <span>Tricia Mae Gaspar</span>
+        </div>
+
+        <div class="info-box reveal">
+            <strong>Date of Birth</strong>
+            <span>November 28, 2011</span>
+        </div>
+
+        <div class="info-box reveal">
+            <strong>Age</strong>
+            <span>14 years old</span>
+        </div>
+
+        <div class="info-box reveal">
+            <strong>Address</strong>
+            <span>Mapurao, Allacapan, Cagayan</span>
+        </div>
+
+        <div class="info-box reveal">
+            <strong>School</strong>
+            <span>Mapurao Integrated Learning School</span>
+        </div>
+
+        <div class="info-box reveal">
+            <strong>Grade Level</strong>
+            <span>Grade 8</span>
+        </div>
+
+        <div class="info-box reveal">
+            <strong>Student Status</strong>
+            <span>ATP Student</span>
+        </div>
+
+        <div class="info-box reveal">
+            <strong>Facebook</strong>
+            <span>Tricia Mae Gaspar</span>
+        </div>
+
+        <div class="info-box reveal">
+            <strong>Contact Number</strong>
+            <span>0912 607 8730</span>
+        </div>
+
+        <div class="info-box reveal">
+            <strong>Alternative Contact</strong>
+            <span>0924 132 7268</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SKILLS
+========================================================= -->
+
+<section id="skills">
+
+    <div class="section-title reveal">
+
+        <span>What I can do</span>
+
+        <h2>
+            My <em>Skills</em>
+        </h2>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+        <div class="skill-card reveal">
+
+            <div class="skill-icon">
+                👩‍🍳
+            </div>
+
+            <h3>
+                Cooking
+            </h3>
+
+            <p>
+                I enjoy preparing and creating different kinds of food.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card reveal">
+
+            <div class="skill-icon">
+                🎨
+            </div>
+
+            <h3>
+                Designing
+            </h3>
+
+            <p>
+                I can create creative, attractive, and organized designs.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card reveal">
+
+            <div class="skill-icon">
+                💡
+            </div>
+
+            <h3>
+                Creativity
+            </h3>
+
+            <p>
+                I enjoy coming up with new and original ideas.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card reveal">
+
+            <div class="skill-icon">
+                🗣️
+            </div>
+
+            <h3>
+                Communication
+            </h3>
+
+            <p>
+                I can express my thoughts clearly and communicate
+                well with others.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     EXPERIENCE
+========================================================= -->
+
+<section id="experience">
+
+    <div class="section-title reveal">
+
+        <span>My journey</span>
+
+        <h2>
+            My <em>Experiences</em>
+        </h2>
+
+    </div>
+
+
+    <div class="timeline">
+
+        <!-- ELEMENTARY -->
+
+        <div class="timeline-item reveal">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-content">
+
+                <h3>
+                    Elementary School
+                </h3>
+
+                <p>
+                    During elementary school, I participated in
+                    different activities and competitions.
+                </p>
+
+                <ul>
+                    <li>Joined Journalism activities.</li>
+                    <li>Participated in Math Bowl competitions.</li>
+                    <li>Became an academic achiever.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <!-- SECONDARY -->
+
+        <div class="timeline-item reveal">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-content">
+
+                <h3>
+                    Secondary School
+                </h3>
+
+                <p>
+                    When I entered secondary school, I temporarily
+                    stopped joining competitions and focused more
+                    on my studies.
+                </p>
+
+                <ul>
+                    <li>Continued improving my academic performance.</li>
+                    <li>Developed my creativity and communication skills.</li>
+                    <li>Continued being an academic achiever.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRESENT -->
+
+        <div class="timeline-item reveal">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-content">
+
+                <h3>
+                    Present
+                </h3>
+
+                <p>
+                    I am currently a Grade 8 ATP student at Mapurao
+                    Integrated Learning School.
+                </p>
+
+                <ul>
+                    <li>Maintaining my academic performance.</li>
+                    <li>Developing my talents and skills.</li>
+                    <li>Learning new things every day.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ACHIEVEMENTS
+========================================================= -->
+
+<section id="achievements">
+
+    <div class="section-title reveal">
+
+        <span>What I am proud of</span>
+
+        <h2>
+            My <em>Achievement</em>
+        </h2>
+
+    </div>
+
+
+    <div class="achievement reveal">
+
+        <div class="achievement-icon">
+            🏆
+        </div>
+
+        <h3>
+            Academic Achiever
+        </h3>
+
+        <p>
+            I have been an academic achiever since elementary school
+            until the present. This achievement represents my hard
+            work, dedication, perseverance, and commitment to my
+            education.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     GOALS
+========================================================= -->
+
+<section id="goals">
+
+    <div class="section-title reveal">
+
+        <span>Looking forward</span>
+
+        <h2>
+            My <em>Goals</em>
+        </h2>
+
+    </div>
+
+
+    <div class="goals">
+
+        <div class="goal reveal">
+
+            <h3>
+                📚 Education
+            </h3>
+
+            <p>
+                Continue working hard in my studies and maintain
+                good academic performance.
+            </p>
+
+        </div>
+
+
+        <div class="goal reveal">
+
+            <h3>
+                🎨 Skills
+            </h3>
+
+            <p>
+                Improve my cooking, designing, creativity, and
+                communication skills.
+            </p>
+
+        </div>
+
+
+        <div class="goal reveal">
+
+            <h3>
+                🌟 Future
+            </h3>
+
+            <p>
+                Become a successful, responsible, and confident
+                person in the future.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section id="contact">
+
+    <div class="section-title reveal">
+
+        <span>Let's connect</span>
+
+        <h2>
+            Contact <em>Me</em>
+        </h2>
+
+    </div>
+
+
+    <div class="contact-card">
+
+        <div class="contact-item reveal">
+
+            <strong>
+                Facebook
+            </strong>
+
+            <span>
+                Tricia Mae Gaspar
+            </span>
+
+        </div>
+
+
+        <div class="contact-item reveal">
+
+            <strong>
+                Contact
+            </strong>
+
+            <span>
+                0912 607 8730
+                <br>
+                0924 132 7268
+            </span>
+
+        </div>
+
+
+        <div class="contact-item reveal">
+
+            <strong>
+                Location
+            </strong>
+
+            <span>
+                Mapurao, Allacapan, Cagayan
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <h3>
+        Tricia Mae Gaspar
+    </h3>
+
+    <p>
+        Grade 8 Student • ATP Student • Academic Achiever
+    </p>
+
+    <p>
+        © 2026 Tricia Mae Gaspar. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+const revealObserver =
+    new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("show");
+
+                    revealObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+
+revealElements.forEach((element) => {
+
+    revealObserver.observe(element);
+
+});
+
+
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
+
+const sections =
+    document.querySelectorAll("section[id]");
+
+const navLinks =
+    document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach((section) => {
+
+        const sectionTop =
+            section.offsetTop - 180;
+
+        if (
+            window.scrollY >= sectionTop
+        ) {
+
+            current =
+                section.getAttribute("id");
+
+        }
+
+    });
+
+    navLinks.forEach((link) => {
+
+        link.style.color = "";
+
+        if (
+            link.getAttribute("href") ===
+            "#" + current
+        ) {
+
+            link.style.color =
+                "#e85d96";
+
+        }
+
+    });
+
+});
+
+
+/* =========================================================
+   SMALL PARALLAX EFFECT
+========================================================= */
+
+const shapes =
+    document.querySelectorAll(".art-shape");
+
+window.addEventListener("mousemove", (event) => {
+
+    const x =
+        (event.clientX / window.innerWidth - .5);
+
+    const y =
+        (event.clientY / window.innerHeight - .5);
+
+    shapes.forEach((shape, index) => {
+
+        const strength =
+            (index + 1) * 7;
+
+        shape.style.transform =
+            `translate(${x * strength}px, ${y * strength}px)`;
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
